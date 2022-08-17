@@ -1,0 +1,55 @@
+/* General CSS */
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #EEF9BF;
+    text-align: center;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    color: #75B79E;
+}
+
+/* Card CSS */
+body div{
+    width: 906px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 47px;
+    background-color: red;
+}
+.card{
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 17px;
+    cursor: pointer;
+}
+.card img{
+    width: 100px;
+}
+
+/* Media Querry for Smartphones */
+@media(max-width: 767px){
+    h1{
+        font-size: 36px;
+        color: #75B79E;
+    }
+    body div{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
