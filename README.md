@@ -1,1 +1,15 @@
-This first version consists of the HTML and CSS, with Media Querry, and a basic JS file. The JS file does basic functions that the project requires: it flips the cards and after 1 second, unflips them, as long as 2 cards are flipped. A few bugs are yet to be corrected and some functions such as randomize the images, verify if we have a pair, etc. are yet to be added.
+Second Version
+
+Changelog:
+
+- Changed the gif names to simplify the code;
+- Added the randomize cards functionality;
+- Fixed the prompt not asking the number of cards repeatedly (it was asking only once in case the requirements didn't match, instead of asking until the number was valid).
+
+To do:
+
+- Click count;
+- Cards matching the same pair and staying flipped;
+- Game ending alert;
+- Timer (bonus);
+- Prompt asking if the player wants to restart the game (bonus).
