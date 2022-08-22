@@ -23,7 +23,6 @@ body div{
     flex-wrap: wrap;
     justify-content: center;
     margin: 47px;
-    background-color: red;
 }
 .card{
     width: 117px;
@@ -36,9 +35,14 @@ body div{
     align-items: center;
     margin: 17px;
     cursor: pointer;
+    transition: all .2s;
+    transform-style: preserve-3d;
 }
 .card img{
     width: 100px;
+}
+.back{
+    transform: rotateY(180deg);
 }
 
 /* Media Querry for Smartphones */

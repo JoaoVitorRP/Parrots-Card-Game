@@ -1,15 +1,14 @@
-Second Version
+Third Version
 
 Changelog:
 
-- Changed the gif names to simplify the code;
-- Added the randomize cards functionality;
-- Fixed the prompt not asking the number of cards repeatedly (it was asking only once in case the requirements didn't match, instead of asking until the number was valid).
+- Cards matching the same pair now remain flipped;
+- Added a click count;
+- Added ending game alert;
+- Added prompt asking if the player wants to restart the game.
+- Fixed some bugs.
 
 To do:
 
-- Click count;
-- Cards matching the same pair and staying flipped;
-- Game ending alert;
 - Timer (bonus);
-- Prompt asking if the player wants to restart the game (bonus).
+- Fix more bugs.
