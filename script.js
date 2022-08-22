@@ -13,7 +13,7 @@ while (numberOfCards % 2 !== 0 || numberOfCards < 4 || numberOfCards > 14) {
 
 //If it's valid, the code continues
 for (let i = 0; i < numberOfCards; i++) {
-  const CardAdd = document.querySelector("body div"); //Selects the div that contains the cards
+  const CardAdd = document.querySelector(".container"); //Selects the div that contains the cards
   CardAdd.innerHTML += `<div class="card card${i + 1}" onclick="flipCard(this)"><img src="img/front.png"></img></div>`; //Add a card in the div
   CardNumber.push(`card${i + 1}`); //Adds the card number in the array CardNumber
 }
@@ -51,6 +51,17 @@ for (let ArrayPos = 0; ArrayPos < CardNumber.length; ArrayPos++) {
   CardNum.classList.add(`${ParrotType[Y]}`);
 }
 
+//Chronometer
+let seconds = 0;
+
+function updateChronometer() {
+  const chronometer = document.querySelector(".chronometer h2"); //Selects the text inside the chronometer div
+  seconds++; //Adds +1 to the seconds
+  chronometer.innerHTML = `${seconds}s`; //Updates the chronometer innerHTML to display the seconds
+}
+
+const myInterval = setInterval(updateChronometer, 1000); //Repeats the 'updateChronometer()' function every 1s
+
 //Flip Card
 let FlippedCards = 0;
 let x = 1;
@@ -74,9 +85,14 @@ function flipCard(card) {
   } else if (card.classList.contains("unicorn")) {
     card.innerHTML = '<img src="img/unicorn.gif"></img>';
   }
+
   card.classList.add(`flipped${x}`); //Adds a class named 'flipped'
   card.classList.add(`back`); //Adds a class named 'back'
   card.removeAttribute("onclick"); //Removes the onclick to avoid duplicated flipped classes
+
+  const cover = document.querySelector(".cover"); //Selects the cover div
+  cover.classList.remove("hidden"); //Removes the 'hidden' class from it, which makes it "visible"
+  setTimeout(disableCover, 1000); //After 1 second, it disables the cover
 
   FlippedCards++;
   x++;
@@ -86,6 +102,7 @@ function flipCard(card) {
     setTimeout(unflipCard, 1000); //Activates the unflip card function after 1 second
   }
 }
+
 function unflipCard() {
   let cardSelect1 = document.querySelector(".flipped1");
   cardSelect1 = cardSelect1.innerHTML; //Selects the innerHTML (gif image) of the card with the class 'flipped1'
@@ -107,9 +124,12 @@ function unflipCard() {
 
     //If the number of correct card equals the total number of cards in the game, that means the player guessed all correctly, so the game ends:
     if (CorrectCards == numberOfCards) {
-      alert(`Você ganhou em ${ClickCount} jogadas!`); //Displays a winning message with the number of flips
-      const RestartGame = prompt('Você quer reiniciar o jogo? Responda com sim ou não'); //Asks if the player wants to restart the game
-      if (RestartGame == 'sim'){
+      clearInterval(myInterval); //Stops the timer
+      alert(`Você ganhou em ${ClickCount} jogadas e ${seconds} segundos!`); //Displays a winning message with the number of flips and the time taken
+      const RestartGame = prompt(
+        "Você quer reiniciar o jogo? Responda com sim ou não"
+      ); //Asks if the player wants to restart the game
+      if (RestartGame == "sim") {
         location.reload(); //If the player answers 'yes', the page refreshes
       }
     }
@@ -126,4 +146,9 @@ function unflipCard() {
       x--;
     }
   }
+}
+
+function disableCover() {
+  const cover = document.querySelector(".cover"); //Selects the cover div
+  cover.classList.add("hidden"); //Adds the 'hidden' class back to it, making it "invisible"
 }

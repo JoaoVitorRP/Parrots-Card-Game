@@ -1,59 +1,93 @@
 /* General CSS */
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    background-color: #EEF9BF;
-    text-align: center;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body {
+  background-color: #eef9bf;
+  text-align: center;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-h1{
-    font-family: 'Roboto', sans-serif;
-    font-size: 56px;
-    color: #75B79E;
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 56px;
+  color: #75b79e;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+}
+.cover {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.hidden {
+  display: none;
 }
 
 /* Card CSS */
-body div{
-    width: 906px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 47px;
+.container {
+  width: 906px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 47px 0px;
 }
-.card{
-    width: 117px;
-    height: 146px;
-    background-color: #A7E9AF;
-    border: 1px solid #99CEA8;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 17px;
-    cursor: pointer;
-    transition: all .2s;
-    transform-style: preserve-3d;
+.card {
+  width: 117px;
+  height: 146px;
+  background-color: #a7e9af;
+  border: 1px solid #99cea8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 17px;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform-style: preserve-3d;
 }
-.card img{
-    width: 100px;
+.card img {
+  width: 100px;
 }
-.back{
-    transform: rotateY(180deg);
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Chronometer */
+.chronometer {
+  width: 100px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 40px;
+  right: 10px;
 }
 
 /* Media Querry for Smartphones */
-@media(max-width: 767px){
-    h1{
-        font-size: 36px;
-        color: #75B79E;
-    }
-    body div{
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+@media (max-width: 767px) {
+  h1 {
+    font-size: 36px;
+    color: #75b79e;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 47px 0px;
+  }
+  .chronometer {
+    top: 92px;
+  }
 }
